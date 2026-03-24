@@ -8,32 +8,22 @@
 <style>
 body {
     margin: 0;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    background: #f5f5f3;
-    color: #333;
+    background: #f4f4f2;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #444;
 }
 
-.container {
+.wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    padding: 50px;
-    position: relative;
-}
-
-/* TEXT */
-h1 {
-    font-weight: 300;
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-p {
-    line-height: 1.7;
-    font-size: 15px;
+    grid-template-columns: 35% 30% 35%;
+    min-height: 100vh;
 }
 
 /* LEFT IMAGE */
+.left {
+    position: relative;
+}
+
 .left img {
     width: 100%;
     height: 100%;
@@ -42,64 +32,111 @@ p {
 
 /* CENTER */
 .center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 60px 40px;
+    position: relative;
 }
 
-.center img {
-    width: 100%;
-    margin: 30px 0;
+.center h1 {
+    font-weight: 300;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.center p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* MAIN IMAGE */
+.main-image {
     position: relative;
+    margin: 40px 0;
     z-index: 2;
 }
 
-/* RIGHT */
+.main-image img {
+    width: 100%;
+}
+
+/* GREEN BLOCK BEHIND CENTER IMAGE */
+.green-left {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: #5c6f4f;
+    left: -60px;
+    top: 300px;
+    z-index: 1;
+}
+
+/* RIGHT COLUMN */
+.right {
+    padding: 60px 40px;
+    position: relative;
+}
+
 .right img {
     width: 100%;
     margin-bottom: 20px;
 }
 
+.right p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* RIGHT GREEN BLOCK */
+.green-right {
+    position: absolute;
+    width: 120px;
+    height: 220px;
+    background: #5c6f4f;
+    right: 0;
+    top: 260px;
+}
+
+/* OFFER LIST */
 .offer {
     margin-top: 20px;
 }
 
 .offer h3 {
-    font-weight: 400;
+    font-weight: normal;
+    font-style: italic;
 }
 
 .offer ul {
     padding-left: 18px;
+    font-size: 14px;
 }
 
-/* GREEN BLOCKS */
-.green-box {
+/* CIRCLE TEXT (simple version) */
+.circle {
     position: absolute;
-    background: #4b5d3a;
-    z-index: 1;
-}
-
-.box-left {
-    width: 220px;
-    height: 220px;
-    left: 28%;
-    top: 45%;
-}
-
-.box-right {
+    left: -90px;
+    top: 420px;
     width: 120px;
-    height: 220px;
-    right: 6%;
-    top: 38%;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px dashed #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transform: rotate(-20deg);
 }
 
 /* MOBILE */
 @media(max-width: 900px){
-    .container {
+    .wrapper {
         grid-template-columns: 1fr;
     }
 
-    .green-box {
+    .green-left,
+    .green-right,
+    .circle {
         display: none;
     }
 }
@@ -108,11 +145,7 @@ p {
 
 <body>
 
-<div class="container">
-
-    <!-- GREEN SHAPES -->
-    <div class="green-box box-left"></div>
-    <div class="green-box box-right"></div>
+<div class="wrapper">
 
     <!-- LEFT -->
     <div class="left">
@@ -121,6 +154,7 @@ p {
 
     <!-- CENTER -->
     <div class="center">
+
         <h1>Urban Leaf Solutions</h1>
 
         <p>
@@ -129,31 +163,51 @@ p {
         </p>
 
         <p>
-        We provide carefully selected greenery that enhances your workspace while creating
-        a calm and welcoming environment.
+        We provide carefully selected greenery that not only enhances your workspace,
+        but also creates a calmer, more welcoming environment for your team and visitors.
         </p>
 
-        <img src="https://images.unsplash.com/photo-1598887142487-6f9a0f1c0f54">
+        <!-- GREEN BLOCK -->
+        <div class="green-left"></div>
+
+        <!-- CIRCLE -->
+        <div class="circle">NEW • NEW • NEW</div>
+
+        <!-- MAIN IMAGE -->
+        <div class="main-image">
+            <img src="https://images.unsplash.com/photo-1598887142487-6f9a0f1c0f54">
+        </div>
 
         <p>
-        From stylish desk plants to statement feature pieces, our tailored packages are
-        designed to complement your workspace and reflect your brand.
+        From stylish desk plants to statement feature pieces, our tailored packages are designed
+        to complement your workspace and reflect your brand.
+        </p>
+
+        <p>
+        Whether you're refreshing a single office or transforming an entire workplace,
+        we make it simple to bring your space to life.
         </p>
 
         <p>
         <strong>Simple, Flexible Pricing</strong><br>
-        Packages available from £1.50 per plant, per week.
+        Packages available from £1.50 per plant, per week — including ongoing maintenance.
         </p>
+
     </div>
 
     <!-- RIGHT -->
     <div class="right">
+
         <img src="https://images.unsplash.com/photo-1616627459511-6f9e9c5d2b9e">
 
         <p>
         Elevate your workspace with expertly curated plants, professionally maintained
-        to the highest standard.
+        to the highest standard. Our tailored service ensures refined, thriving greenery
+        with minimal effort on your part.
         </p>
+
+        <!-- GREEN BLOCK -->
+        <div class="green-right"></div>
 
         <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb">
 
@@ -164,12 +218,12 @@ p {
                 <li>Flexible rental packages</li>
                 <li>Regular maintenance and care</li>
                 <li>Healthy, thriving plants all year round</li>
-</ul>
+            </ul>
         </div>
+
     </div>
 
 </div>
 
 </body>
 </html>
-                
