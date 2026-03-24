@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Urban Leaf Solutions</title>
+
 <style>
 body {
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
-    background: #f4f4f2;
+    background: #f5f5f3;
     color: #333;
 }
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
-    padding: 40px;
-}    
+    padding: 50px;
+    position: relative;
+}
+
+/* TEXT */
 h1 {
     font-weight: 300;
-    font-size: 40px;
+    font-size: 42px;
+    margin-bottom: 20px;
 }
 
 p {
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 15px;
 }
 
 /* LEFT IMAGE */
-.left-image img {
+.left img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* CENTER SECTION */
+/* CENTER */
 .center {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.main-image {
-    margin: 40px 0;
-}
-
-.main-image img {
+.center img {
     width: 100%;
+    margin: 30px 0;
+    position: relative;
+    z-index: 2;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
 .right img {
     width: 100%;
     margin-bottom: 20px;
@@ -63,22 +69,38 @@ p {
 }
 
 .offer ul {
-    padding-left: 20px;
+    padding-left: 18px;
 }
 
-/* GREEN BLOCK DECOR */
-.green-block {
+/* GREEN BLOCKS */
+.green-box {
     position: absolute;
-    width: 200px;
-    height: 200px;
     background: #4b5d3a;
-    z-index: -1;
+    z-index: 1;
+}
+
+.box-left {
+    width: 220px;
+    height: 220px;
+    left: 28%;
+    top: 45%;
+}
+
+.box-right {
+    width: 120px;
+    height: 220px;
+    right: 6%;
+    top: 38%;
 }
 
 /* MOBILE */
 @media(max-width: 900px){
     .container {
         grid-template-columns: 1fr;
+    }
+
+    .green-box {
+        display: none;
     }
 }
 </style>
@@ -88,12 +110,16 @@ p {
 
 <div class="container">
 
-    <!-- LEFT IMAGE -->
-    <div class="left-image">
-        <img src="left-plant.jpg">
+    <!-- GREEN SHAPES -->
+    <div class="green-box box-left"></div>
+    <div class="green-box box-right"></div>
+
+    <!-- LEFT -->
+    <div class="left">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
     </div>
 
-    <!-- CENTER CONTENT -->
+    <!-- CENTER -->
     <div class="center">
         <h1>Urban Leaf Solutions</h1>
 
@@ -103,17 +129,15 @@ p {
         </p>
 
         <p>
-        We provide carefully selected greenery that not only enhances your workspace,
-        but also creates a calmer, more welcoming environment.
+        We provide carefully selected greenery that enhances your workspace while creating
+        a calm and welcoming environment.
         </p>
 
-        <div class="main-image">
-            <img src="center-plant.jpg">
-        </div>
+        <img src="https://images.unsplash.com/photo-1598887142487-6f9a0f1c0f54">
 
         <p>
-        From stylish desk plants to statement feature pieces, our tailored packages
-        are designed to complement your workspace and reflect your brand.
+        From stylish desk plants to statement feature pieces, our tailored packages are
+        designed to complement your workspace and reflect your brand.
         </p>
 
         <p>
@@ -122,17 +146,16 @@ p {
         </p>
     </div>
 
-    <!-- RIGHT CONTENT -->
+    <!-- RIGHT -->
     <div class="right">
-
-        <img src="top-right.jpg">
+        <img src="https://images.unsplash.com/photo-1616627459511-6f9e9c5d2b9e">
 
         <p>
         Elevate your workspace with expertly curated plants, professionally maintained
         to the highest standard.
         </p>
 
-        <img src="bottom-right.jpg">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb">
 
         <div class="offer">
             <h3>What We Offer</h3>
@@ -140,13 +163,13 @@ p {
                 <li>Custom plant selection and styling</li>
                 <li>Flexible rental packages</li>
                 <li>Regular maintenance and care</li>
-                <li>Healthy plants all year round</li>
-            </ul>
+                <li>Healthy, thriving plants all year round</li>
+</ul>
         </div>
-
     </div>
 
 </div>
 
 </body>
 </html>
+                
