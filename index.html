@@ -1,10 +1,152 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>My First Website</title>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Leaf Solutions</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f4f4f2;
+    color: #333;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+}    
+h1 {
+    font-weight: 300;
+    font-size: 40px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* LEFT IMAGE */
+.left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CENTER SECTION */
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-image {
+    margin: 40px 0;
+}
+
+.main-image img {
+    width: 100%;
+}
+
+/* RIGHT SIDE */
+.right img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.offer {
+    margin-top: 20px;
+}
+
+.offer h3 {
+    font-weight: 400;
+}
+
+.offer ul {
+    padding-left: 20px;
+}
+
+/* GREEN BLOCK DECOR */
+.green-block {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #4b5d3a;
+    z-index: -1;
+}
+
+/* MOBILE */
+@media(max-width: 900px){
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>Hello 👋</h1>
-    <p>This is my first website!</p>
+
+<div class="container">
+
+    <!-- LEFT IMAGE -->
+    <div class="left-image">
+        <img src="left-plant.jpg">
+    </div>
+
+    <!-- CENTER CONTENT -->
+    <div class="center">
+        <h1>Urban Leaf Solutions</h1>
+
+        <p>
+        Transform your office into a healthier, more inspiring place to work with our
+        professional indoor plant rental and maintenance service.
+        </p>
+
+        <p>
+        We provide carefully selected greenery that not only enhances your workspace,
+        but also creates a calmer, more welcoming environment.
+        </p>
+
+        <div class="main-image">
+            <img src="center-plant.jpg">
+        </div>
+
+        <p>
+        From stylish desk plants to statement feature pieces, our tailored packages
+        are designed to complement your workspace and reflect your brand.
+        </p>
+
+        <p>
+        <strong>Simple, Flexible Pricing</strong><br>
+        Packages available from £1.50 per plant, per week.
+        </p>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="right">
+
+        <img src="top-right.jpg">
+
+        <p>
+        Elevate your workspace with expertly curated plants, professionally maintained
+        to the highest standard.
+        </p>
+
+        <img src="bottom-right.jpg">
+
+        <div class="offer">
+            <h3>What We Offer</h3>
+            <ul>
+                <li>Custom plant selection and styling</li>
+                <li>Flexible rental packages</li>
+                <li>Regular maintenance and care</li>
+                <li>Healthy plants all year round</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
